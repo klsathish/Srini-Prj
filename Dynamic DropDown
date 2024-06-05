@@ -21,7 +21,9 @@
                 if (inputVal.length >= 1) {
                     $.ajax({
                         url: '@Url.Action("GetValues", "YourController")',
-                        data: { term: inputVal },
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ term: inputVal }),
                         success: function (data) {
                             var dataList = $('#fruitList');
                             dataList.empty();

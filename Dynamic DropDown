@@ -40,3 +40,16 @@
     </script>
 </body>
 </html>
+---------------
+
+
+            $('#dropdownInput').on('change', function() {
+                const selectedValue = $(this).val();
+                const selectedOption = $(`#options option[value="${selectedValue}"]`);
+
+                if (selectedOption.length > 0) {
+                    const dataValue = selectedOption.attr('data-value');
+                    $('#modalText').text(`You selected: ${selectedValue} with description: ${dataValue}`);
+                    $('#myModal').show();
+                }
+            });
